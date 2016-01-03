@@ -1,3 +1,20 @@
+/*
+* jQuery Plugin visibledInWindow v1.0
+* Created By EgorovSa
+* egorovsa2@gmail.com
+ jQuery('.block').visibledInWindow({
+        afterVisible: 220, // this params correct visible callback 
+        beforeEnd: 150, // this params correct end callback 
+        beginShow: function (obj) {
+            // start function when block is show
+        },
+        endShow: function (obj) {
+            // start function when block is hide
+        }
+    });
+
+
+*/
 (function ($) {
     var methods = {
         init: function (options) {
