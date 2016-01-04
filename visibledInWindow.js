@@ -1,20 +1,18 @@
 /*
-* jQuery Plugin visibledInWindow v1.0
-* Created By EgorovSa
-* egorovsa2@gmail.com
+ * jQuery Plugin visibledInWindow v1.0
+ * Created By EgorovSa
+ * egorovsa2@gmail.com
  jQuery('.block').visibledInWindow({
-        afterVisible: 220, // this params correct visible callback 
-        beforeEnd: 150, // this params correct end callback 
+    afterVisible: 220, // this params correct visible callback
+        beforeEnd: 150, // this params correct end callback
         beginShow: function (obj) {
             // start function when block is show
         },
         endShow: function (obj) {
             // start function when block is hide
-        }
-    });
-
-
-*/
+         }
+});
+ */
 (function ($) {
     var methods = {
         init: function (options) {
@@ -54,7 +52,7 @@
             jQuery(window).scroll(function () {
                 var scrTol = jQuery(this).scrollTop();
                 var wHeight = jQuery(this).height();
-                self.actionScroll($this, scrTol, wHeight)
+                self.actionScroll($this, scrTol, wHeight);
             });
         },
         actionScroll: function ($this, scrTol, wHeight) {
@@ -65,13 +63,13 @@
             var objVisibleBegin = objTop - wHeight + settings.afterVisible;
             var objVisibleBeginEnd = objTop + $this.height() - settings.beforeEnd;
             if (scrTol > objVisibleBegin && scrTol < objVisibleBeginEnd) {
-                if (data.showed == false) {
+                if (data.showed === false) {
                     settings.beginShow($this);
                 }
                 data.showed = true;
             }
             if (scrTol < objVisibleBegin || scrTol > objVisibleBeginEnd) {
-                if (data.showed == true)
+                if (data.showed === true)
                     settings.endShow($this);
                 data.showed = false;
             }
